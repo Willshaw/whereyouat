@@ -1,2 +1,0 @@
-# whereyouat
-Created with CodeSandbox
