@@ -3,20 +3,38 @@
     <h1>{{ item.title }}</h1>
 
     <select v-model="selected.section">
-      <option :value="-1">Choose section...</option>
-      <option :key="index" v-for="(section,index) in item.sections" :value="index">{{section.title}}</option>
+        <option :value="-1">Choose section...</option>
+        <option 
+            :key="index" 
+            v-for="(section,index) in item.sections" 
+            :value="index"
+        >
+            {{section.title}}
+        </option>
     </select>
     
     <select v-model="selected.sub_section" :disabled="selected.section === -1">
-      <option :value="-1">Choose sub section...</option>
-      <option v-for="(sub_section,index) in selected_subsections" :value="index">{{sub_section}}</option>
+        <option :value="-1">Choose sub section...</option>
+        <option 
+            v-for="(sub_section,index) in selected_subsections" 
+            :value="index"
+            :key="index"
+        >
+            {{sub_section}}
+        </option>
     </select>
 
     <h2 v-html="status"></h2>
 
-    <div class="sections" v-for="section in item.sections">
-      <h2>{{section.title}}</h2>
-      <div class="sub_sections" v-for="sub_section in section.sections">{{sub_section}}</div>
+    <div class="sections" v-for="(section,index) in item.sections" :key="index">
+        <h2>{{section.title}}</h2>
+        <div 
+            class="sub_sections" 
+            v-for="(sub_section,index) in section.sections"
+            :key="index"
+        >
+            {{sub_section}}
+        </div>
     </div>
   </div>
 </template>
@@ -63,10 +81,12 @@ export default {
         }
       }
 
-      let percentage = (current_section / total_sections) * 100;
+      let percentage = Math.floor(
+                            (current_section / total_sections) * 100
+                        );
 
       return `
-        You are ${percentage} % of the way through.
+        You are ${percentage}% of the way through.
         <br />
         ${current_section} out of ${total_sections}
       `;

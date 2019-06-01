@@ -1,12 +1,12 @@
 <template>
   <div class="hello">
-    <h1>We will list things here</h1>
+    <h1>Choose a product</h1>
     <router-link
       class="link"
       :to="{ path: '/item/hp' }"
       v-for="(item, key) in items"
       :key="key"
-    >{{key}}</router-link>
+    >{{item.title}}</router-link>
   </div>
 </template>
 
