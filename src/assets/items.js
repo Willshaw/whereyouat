@@ -1,5 +1,5 @@
 export default {
-    hp: {
+    harrypotter: {
         title: "Harry Potter",
         type: "Book",
         sections: [
@@ -229,6 +229,99 @@ export default {
                     "King’s Cross",	
                     "The Flaw in the Plan",	
                     "Epilogue"
+                ]
+            }
+        ]
+    },
+    breakingbad: {
+        title: "Breaking Bad",
+        type: "TV Series",
+        sections: [
+            {
+                title: "Season 1",
+                sections: [
+                    "Pilot",
+                    "Cat's in the Bag...",
+                    "...And the Bag's in the River",
+                    "Cancer Man",
+                    "Gray Matter",
+                    "Crazy Handful of Nothin'",
+                    "A No-Rough-Stuff-Type Deal"
+                ]
+            },
+            {
+                title: "Season 2",
+                sections: [
+                    "Seven Thirty-Seven",
+                    "Grilled",
+                    "Bit by a Dead Bee",
+                    "Down",
+                    "Breakage",
+                    "Peekaboo",
+                    "Negro y Azul",
+                    "Better Call Saul",
+                    "4 Days Out",
+                    "Over",
+                    "Mandala",
+                    "Phoenix",
+                    "ABQ"
+                ]
+            },
+            {
+                title: "Season 3",
+                sections: [
+                    "No Más",
+                    "Caballo sin Nombre",
+                    "I.F.T.",
+                    "Green Light",
+                    "Más",
+                    "Sunset",
+                    "One Minute",
+                    "I See You",
+                    "Kafkaesque",
+                    "Fly",
+                    "Abiquiu",
+                    "Half Measures",
+                    "Full Measure"
+                ]
+            },
+            {
+                title: "Season 4",
+                sections: [
+                    "Box Cutter",
+                    "Thirty-Eight Snub",
+                    "Open House",
+                    "Bullet Points",
+                    "Shotgun",
+                    "Cornered",
+                    "Problem Dog",
+                    "Hermanos",
+                    "Bug",
+                    "Salud",
+                    "Crawl Space",
+                    "End Times",
+                    "Face Off"
+                ]
+            },
+            {
+                title: "Season 5",
+                sections: [
+                    "Live Free or Die",
+                    "Madrigal",
+                    "Hazard Pay",
+                    "Fifty-One",
+                    "Dead Freight",
+                    "Buyout",
+                    "Say My Name",
+                    "Gliding Over All",
+                    "Blood Money",
+                    "Buried",
+                    "Confessions",
+                    "Rabid Dog",
+                    "To'hajiilee",
+                    "Ozymandias",
+                    "Granite State",
+                    "Felina"
                 ]
             }
         ]
