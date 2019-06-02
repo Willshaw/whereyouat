@@ -1,5 +1,8 @@
 <template>
   <div>
+
+    <Navbar title="Where you at?" />
+
     <h1>Choose a product</h1>
     <div class="link-list">
         <router-link
@@ -17,14 +20,18 @@
 
 <script>
 import items from "../assets/items";
+import Navbar from './Navbar';
 
 export default {
-  name: "List",
-  data: function() {
-    return {
-      items: items
-    };
-  }
+    name: "List",
+    components: {
+        Navbar
+    },
+    data: function() {
+        return {
+          items: items
+        };
+    }
 };
 </script>
 

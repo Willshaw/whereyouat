@@ -1,13 +1,26 @@
 <template>
   <div id="app">
-    <router-link class="link" :to="{ path: '/' }">Home</router-link>
+
     <router-view></router-view>
+
+    <footer class="footer">
+        <div class="container">
+            <span class="text-muted">
+                This site uses Google Analytics cookies - don't use it if you're not happy with that.
+                <br />
+                The media content belongs to it's creator.
+                <br />
+                Designed, Built and Maintained by 
+                <a href="https://willshawmedia.com">Pete Williamson</a>
+            </span>
+        </div>
+    </footer>
   </div>
 </template>
 
 <script>
 export default {
-  name: "App"
+    name: "App"
 };
 </script>
 
@@ -18,6 +31,16 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+}
+
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding: .5em 0;
+    font-size: .9em;
+    background-color: #EEE;
+    border-top: thin solid #CCC;
 }
 </style>
