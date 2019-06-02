@@ -1,5 +1,8 @@
 <template>
   <div class="item">
+
+    <Navbar title="< Back" />
+
     <h1>{{ item.title }}</h1>
 
     <select v-model="selected.section">
@@ -41,60 +44,64 @@
 
 <script>
 import items from "../assets/items";
+import Navbar from './Navbar';
 
 export default {
-  data: function() {
-    return {
-      item: items[this.name],
-      selected: {
-        section: -1,
-        sub_section: -1
-      }
-    };
-  },
+    components: {
+        Navbar
+    },    
+    data: function() {
+        return {
+            item: items[this.name],
+            selected: {
+                section: -1,
+                sub_section: -1
+            }
+        };
+    },
 
-  props: ["name"],
+    props: ["name"],
 
-  computed: {
-    selected_subsections: function() {
-      if (this.selected.section === -1) {
-        return [];
-      }
+    computed: {
+        selected_subsections: function() {
+        if (this.selected.section === -1) {
+            return [];
+        }
 
-      return this.item.sections[this.selected.section].sections;
+        return this.item.sections[this.selected.section].sections;
     },
     status: function() {
-      // default message
-      if (this.selected.section === -1 || this.selected.sub_section === -1) {
-        return "Choose a section and sub section";
-      }
-
-      // if we have sections and sub sections work everything out.
-      let total_sections = 0;
-      let current_section = 0;
-      for (let i = 0; i < this.item.sections.length; i++) {
-        for (let j = 0; j < this.item.sections[i].sections.length; j++) {
-          total_sections++;
-          if (i === this.selected.section && j === this.selected.sub_section) {
-            current_section = total_sections;
-          }
+        // default message
+        if (this.selected.section === -1 || this.selected.sub_section === -1) {
+            return "Choose a section and sub section";
         }
-      }
 
-      let percentage = Math.floor(
-                            (current_section / total_sections) * 100
-                        );
+        // if we have sections and sub sections work everything out.
+        let total_sections = 0;
+        let current_section = 0;
+        for (let i = 0; i < this.item.sections.length; i++) {
+            for (
+                let j = 0; 
+                j < this.item.sections[i].sections.length; 
+                j++
+            ) {
+                total_sections++;
+                if (i === this.selected.section && j === this.selected.sub_section) {
+                    current_section = total_sections;
+                }
+            }
+        }
 
-      return `
-        You are ${percentage}% of the way through.
-        <br />
-        ${current_section} out of ${total_sections}
-      `;
+        let percentage = Math.floor(
+                                (current_section / total_sections) * 100
+                            );
+
+        return `
+            You are ${percentage}% of the way through.
+            <br />
+            ${current_section} out of ${total_sections}
+        `;
     }
   }
 };
 </script>
-
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-</style>
