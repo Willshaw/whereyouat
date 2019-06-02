@@ -7,7 +7,7 @@
 
     <div class="container">
 
-        <div class="row">
+        <div class="row selectors">
             <div class="col">
                 <select v-model="selected.section" class="form-control">
                     <option :value="-1">Choose section...</option>
@@ -122,3 +122,12 @@ export default {
   }
 };
 </script>
+
+<style scoped>
+    .selectors {
+        margin: 1em auto;
+        padding: 1em 0;
+        border: thin solid #CCC;
+        border-width: thin 0;
+    }
+</style>
