@@ -1,45 +1,62 @@
 <template>
-  <div class="item">
+<div class="item">
 
     <Navbar title="< Back" />
 
     <h1>{{ item.title }}</h1>
 
-    <select v-model="selected.section">
-        <option :value="-1">Choose section...</option>
-        <option 
-            :key="index" 
-            v-for="(section,index) in item.sections" 
-            :value="index"
-        >
-            {{section.title}}
-        </option>
-    </select>
-    
-    <select v-model="selected.sub_section" :disabled="selected.section === -1">
-        <option :value="-1">Choose sub section...</option>
-        <option 
-            v-for="(sub_section,index) in selected_subsections" 
-            :value="index"
-            :key="index"
-        >
-            {{sub_section}}
-        </option>
-    </select>
+    <div class="container">
 
-    <h2 v-html="status"></h2>
+        <div class="row">
+            <div class="col">
+                <select v-model="selected.section" class="form-control">
+                    <option :value="-1">Choose section...</option>
+                    <option 
+                        :key="index" 
+                        v-for="(section,index) in item.sections" 
+                        :value="index"
+                    >
+                        {{section.title}}
+                    </option>
+                </select>
+            </div>
+            <div class="col">
+                <select 
+                    v-model="selected.sub_section" :disabled="selected.section === -1"
+                    class="form-control"
+                >
+                    <option :value="-1">Choose sub section...</option>
+                    <option 
+                        v-for="(sub_section,index) in selected_subsections" 
+                        :value="index"
+                        :key="index"
+                    >
+                        {{sub_section}}
+                    </option>
+                </select>
+            </div>
+        </div>   
 
-    <div class="sections" v-for="(section,index) in item.sections" :key="index">
-        <h2>{{section.title}}</h2>
-        <div 
-            class="sub_sections" 
-            v-for="(sub_section,index) in section.sections"
-            :key="index"
-        >
-            {{sub_section}}
+        <div class="row"> 
+            <div class="col">
+                <h2 v-html="status"></h2>
+            </div>
+        </div>
+
+        <div class="sections row" v-for="(section,index) in item.sections" :key="index">
+            <div class="col">
+                <h3>{{section.title}}</h3>
+                <div 
+                    class="sub_sections" 
+                    v-for="(sub_section,index) in section.sections"
+                    :key="index"
+                >
+                    {{sub_section}}
+                </div>
+            </div>
         </div>
     </div>
-  </div>
+</div>
 </template>
 
 <script>
