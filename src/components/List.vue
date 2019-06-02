@@ -1,12 +1,17 @@
 <template>
-  <div class="hello">
-    <h1>We will list things here</h1>
-    <router-link
-      class="link"
-      :to="{ path: '/item/hp' }"
-      v-for="(item, key) in items"
-      :key="key"
-    >{{key}}</router-link>
+  <div>
+    <h1>Choose a product</h1>
+    <div class="link-list">
+        <router-link
+        class="link"
+        :to="{ path: '/item/' + key }"
+        v-for="(item, key) in items"
+        :key="key"
+        >
+            {{item.title}}
+            <em class="item-type">{{item.type}}</em>
+        </router-link>
+    </div>
   </div>
 </template>
 
@@ -23,20 +28,24 @@ export default {
 };
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h3 {
-  margin: 40px 0 0;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-}
+    .link-list {
+        border-top: thin solid #CCC;
+    }
+
+    .link {
+        display: block;
+        padding: 0.5em;
+        text-decoration: none;
+        color: #000;
+        border-bottom: thin solid #CCC;
+    }
+
+    .item-type {
+        font-size: 0.75em;
+    }
+
+    .link:hover {
+        background-color: #EEE;
+    }
 </style>
