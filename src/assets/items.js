@@ -1,7 +1,7 @@
 export default {
     harrypotter: {
         title: "Harry Potter",
-        type: "Book",
+        type: "book",
         sections: [
             {
                 title: "Harry Potter and the Philosopher's Stone",
@@ -235,7 +235,7 @@ export default {
     },
     breakingbad: {
         title: "Breaking Bad",
-        type: "TV Series",
+        type: "tv",
         sections: [
             {
                 title: "Season 1",

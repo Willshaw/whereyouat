@@ -44,14 +44,28 @@
         </div>
 
         <div class="sections row" v-for="(section,index) in item.sections" :key="index">
-            <div class="col">
-                <h3>{{section.title}}</h3>
+            <div class="col section">
+                <div class="row">
+                    <div class="col-3">
+                        <h3 class="type-title">{{types[ item.type ].section}} {{index + 1}}</h3>
+                    </div>
+                    <div class="col">
+                        <h3>{{section.title}}</h3>
+                    </div>
+                    
+                </div>
                 <div 
-                    class="sub_sections" 
+                    class="sub_sections row" 
                     v-for="(sub_section,index) in section.sections"
                     :key="index"
                 >
-                    {{sub_section}}
+                    <div class="type-title col-3">
+                        {{types[ item.type ].sub_section}}
+                        {{index + 1}}
+                    </div>
+                    <div class="col">
+                        {{sub_section}}
+                    </div>
                 </div>
             </div>
         </div>
@@ -73,6 +87,18 @@ export default {
             selected: {
                 section: -1,
                 sub_section: -1
+            },
+            types: {
+                'book' : {
+                    'label' : 'Book',
+                    'section' : 'book',
+                    'sub_section' : 'chapter'
+                },
+                'tv' : {
+                    'label' : 'TV Series',
+                    'section' : 'season',
+                    'sub_section' : 'episode'
+                }
             }
         };
     },
@@ -81,44 +107,44 @@ export default {
 
     computed: {
         selected_subsections: function() {
-        if (this.selected.section === -1) {
-            return [];
-        }
+            if (this.selected.section === -1) {
+                return [];
+            }
 
-        return this.item.sections[this.selected.section].sections;
-    },
-    status: function() {
-        // default message
-        if (this.selected.section === -1 || this.selected.sub_section === -1) {
-            return "Choose a section and sub section";
-        }
+            return this.item.sections[this.selected.section].sections;
+        },
+        status: function() {
+            // default message
+            if (this.selected.section === -1 || this.selected.sub_section === -1) {
+                return "Choose a section and sub section";
+            }
 
-        // if we have sections and sub sections work everything out.
-        let total_sections = 0;
-        let current_section = 0;
-        for (let i = 0; i < this.item.sections.length; i++) {
-            for (
-                let j = 0; 
-                j < this.item.sections[i].sections.length; 
-                j++
-            ) {
-                total_sections++;
-                if (i === this.selected.section && j === this.selected.sub_section) {
-                    current_section = total_sections;
+            // if we have sections and sub sections work everything out.
+            let total_sections = 0;
+            let current_section = 0;
+            for (let i = 0; i < this.item.sections.length; i++) {
+                for (
+                    let j = 0; 
+                    j < this.item.sections[i].sections.length; 
+                    j++
+                ) {
+                    total_sections++;
+                    if (i === this.selected.section && j === this.selected.sub_section) {
+                        current_section = total_sections;
+                    }
                 }
             }
+
+            let percentage = Math.floor(
+                                    (current_section / total_sections) * 100
+                                );
+
+            return `
+                You are ${percentage}% of the way through.
+                <br />
+                ${current_section} out of ${total_sections}
+            `;
         }
-
-        let percentage = Math.floor(
-                                (current_section / total_sections) * 100
-                            );
-
-        return `
-            You are ${percentage}% of the way through.
-            <br />
-            ${current_section} out of ${total_sections}
-        `;
-    }
   }
 };
 </script>
@@ -130,4 +156,25 @@ export default {
         border: thin solid #CCC;
         border-width: thin 0;
     }
+
+    .type-title {
+        text-transform: capitalize;
+    }
+
+    .sub_sections:first-of-type {
+        border-top: thin solid #CCC;
+    }
+
+    .sub_sections {
+        padding: 0.25em 0;
+        border-bottom: thin solid #CCC;
+    }
+
+    .sub_sections:hover {
+        background-color: #EEE;
+    }
+
+    .sub_sections:last-of-type {
+        margin-bottom: 2em;
+    }    
 </style>
