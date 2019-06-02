@@ -1,9 +1,10 @@
 <template>
-  <div>
+<div>
 
     <Navbar title="Where you at?" />
 
     <h1>Choose a product</h1>
+
     <div class="link-list">
         <router-link
         class="link"
@@ -15,7 +16,8 @@
             <em class="item-type">{{item.type}}</em>
         </router-link>
     </div>
-  </div>
+
+</div>
 </template>
 
 <script>
