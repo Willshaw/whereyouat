@@ -1,20 +1,22 @@
 <template>
 <div>
 
-    <Navbar title="Where you at?" />
+    <Navbar title="< Home" path="/" />
 
-    <h1>Choose a product</h1>
+    <div class="container">
+        <h1>Choose a product</h1>
 
-    <div class="link-list">
-        <router-link
-        class="link"
-        :to="{ path: '/item/' + key }"
-        v-for="(item, key) in items"
-        :key="key"
-        >
-            {{item.title}}
-            <em class="item-type">{{item.type}}</em>
-        </router-link>
+        <div class="link-list">
+            <router-link
+            class="link"
+            :to="{ path: '/item/' + key }"
+            v-for="(item, key) in items"
+            :key="key"
+            >
+                {{item.title}}
+                <em class="item-type">{{item.type}}</em>
+            </router-link>
+        </div>
     </div>
 
 </div>

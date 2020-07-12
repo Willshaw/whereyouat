@@ -1,27 +1,29 @@
 <template>
 <div>
 
-    <Navbar title="Where you at?" />
+    <Navbar title="Where you at?" path="/" />
 
-    <img
-        class="logo-big"
-        src="https://res.cloudinary.com/willshawmedia/image/upload/v1594585217/whereyouat/logo-big.png"
-    >
+    <div class="container">
+        <img
+            class="logo-big"
+            src="https://res.cloudinary.com/willshawmedia/image/upload/w_500/v1594585217/whereyouat/logo-big.png"
+        >
 
-   <p>
-       "Where you at?" is here to let you know how far you've got through a 
-       TV Series or Collection of books.
-   </p>
+        <p>
+            "Where you at?" is here to let you know how far you've got through a 
+            TV Series or Collection of books.
+        </p>
 
-   <p>
-       Not every book or series (or season) is the same length,
-       there could be more chapters/episodes, so knowing how far you are
-       through the entire collection can be hard to work out.
-    </p>
+        <p>
+            Not every book or series (or season) is the same length,
+            there could be more chapters/episodes, so knowing how far you are
+            through the entire collection can be hard to work out.
+            </p>
 
-    <p>Choose a product from the list below to find out how far you are through...</p>
+            <p>Choose a product from the list below to find out how far you are through...</p>
 
-   <router-link class="navbar-brand" :to="{ path: '/list' }">Choose a product</router-link>
+        <router-link class="navbar-brand" :to="{ path: '/list' }">Choose a product</router-link>
+    </div>
 
 </div>
 </template>
@@ -47,5 +49,10 @@ export default {
     .logo-big {
         width: 100%;
         max-width: 500px;
+    }
+
+    p {
+        padding:0.5em;
+        text-align: justify;
     }
 </style>
