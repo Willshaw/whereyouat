@@ -6,8 +6,6 @@
     <footer class="footer">
         <div class="container">
             <span class="text-muted">
-                This site uses Google Analytics cookies - don't use it if you're not happy with that.
-                <br />
                 The media content belongs to its creator.
                 <br />
                 Designed, Built and Maintained by
