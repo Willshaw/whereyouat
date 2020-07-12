@@ -4,17 +4,54 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+    <!-- <link rel="icon" href="<%= BASE_URL %>favicon.ico"> -->
+
+    <link rel="apple-touch-icon" sizes="180x180" href="<%= BASE_URL %><%= BASE_URL %>apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="<%= BASE_URL %>favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="<%= BASE_URL %>favicon-16x16.png">
+    <link rel="manifest" href="<%= BASE_URL %>site.webmanifest">
+    <link rel="mask-icon" href="<%= BASE_URL %>safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#ffc40d">
+    <meta name="theme-color" content="#ffffff">
+
     <title>Where you at?</title>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-30502721-6"></script>
+    <script src="https://cc.cdn.civiccomputing.com/9/cookieControl-9.x.min.js"></script>
     <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+        var config = {
+            apiKey: 'b070cef76091f6a535fbe7afb04fc14cb2e8e0b7',
+            product: 'COMMUNITY',
+            necessaryCookies: [],
+            optionalCookies: [
+              {
+                name: 'analytics',
+                label: 'Analytics',
+                description: 'Analytical cookies gather anonymous data to help us to improve our website.',
+                cookies: ['_ga', '_gid', '_gat', '__utma', '__utmt', '__utmb', '__utmc', '__utmz', '__utmv'],
+                onAccept : function(){
+                  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+                  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-    gtag('config', 'UA-30502721-6');
+                  ga('create', 'UA-30502721-6', 'auto');
+                  ga('send', 'pageview');
+                },
+                onRevoke: function(){
+                  window['ga-disable-UA-30502721-6'] = true;
+                }
+              }
+            ],
+            position: 'LEFT',
+            theme: 'LIGHT'
+        };
+
+        CookieControl.load( config );
+    </script>
+    <script>
+    
     </script>
   </head>
   <body>
