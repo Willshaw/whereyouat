@@ -6,12 +6,11 @@
     <footer class="footer">
         <div class="container">
             <span class="text-muted">
-                This site uses Google Analytics cookies - don't use it if you're not happy with that.
-                <br />
                 The media content belongs to its creator.
                 <br />
-                Designed, Built and Maintained by 
+                Designed, Built and Maintained by
                 <a href="https://willshawmedia.com">Pete Williamson</a>
+                &copy; {{now}}
             </span>
         </div>
     </footer>
@@ -20,7 +19,18 @@
 
 <script>
 export default {
-    name: "App"
+    name: "App",
+    computed: {
+      now() {
+        const now = new Date()
+        const y = new Intl.DateTimeFormat('en', { year: 'numeric' }).format(now)
+        // const m = new Intl.DateTimeFormat('en', { month: 'short' }).format(now)
+        // const d = new Intl.DateTimeFormat('en', { day: '2-digit' }).format(now)
+
+        // return `${d}-${m}-${y}`;
+        return y;
+      }
+    }
 };
 </script>
 

@@ -1,12 +1,19 @@
 <template>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <router-link class="navbar-brand" :to="{ path: '/' }">{{title}}</router-link>
+        <img
+            class="logo-small"
+            src="https://res.cloudinary.com/willshawmedia/image/upload/c_thumb,w_50/v1594585217/whereyouat/logo-small.png"
+        >
+        <router-link class="navbar-brand" :to="{ path }">{{title}}</router-link>
 
-        </nav>
+    </nav>
 </template>
 
 <script>
     export default {
-        props: [ 'title' ]
+        props: [ 'title', 'path' ]
     }
 </script>
+
+<style scoped>
+</style>

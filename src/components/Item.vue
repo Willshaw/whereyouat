@@ -1,11 +1,11 @@
 <template>
 <div class="item">
 
-    <Navbar title="< Back" />
-
-    <h1>{{ item.title }}</h1>
+    <Navbar title="< Product List" path="/list" />
 
     <div class="container">
+
+        <h1>{{ item.title }}</h1>
 
         <div class="row selectors">
             <div class="col">
@@ -52,7 +52,7 @@
                     <div class="col">
                         <h3>{{section.title}}</h3>
                     </div>
-                    
+
                 </div>
                 <div 
                     class="sub_sections row" 
