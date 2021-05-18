@@ -325,5 +325,149 @@ export default {
                 ]
             }
         ]
+    },
+    superstore: {
+        title: "Superstore",
+        type: "TV",
+        sections: [
+            {
+                title: "Season 1",
+                sections: [
+                    "Pilot",
+                    "Magazine Profile",
+                    "Shots and Salsa",
+                    "Mannequin",
+                    "Shoplifter",
+                    "Secret Shopper",
+                    "Color Wars",
+                    "Wedding Day Sale",
+                    "All-Nighter",
+                    "Demotion",
+                    "Labor"
+                ]
+            },{
+                title: "Season 2",
+                sections: [
+                    "Olympics",
+                    "Strike",
+                    "Back to Work",
+                    "Guns, Pills and Birds",
+                    "Spokesman Scandal",
+                    "Dog Adoption Day",
+                    "Halloween Theft",
+                    "Election Day",
+                    "Seasonal Help",
+                    "Black Friday",
+                    "Lost and Found",
+                    "Rebranding",
+                    "Ladies' Lunch",
+                    "Valentine's Day",
+                    "Super Hot Store",
+                    "Wellness Fair",
+                    "Integrity Award",
+                    "Mateo's Last Day",
+                    "Glenn's Kids",
+                    "Spring Cleaning",
+                    "Cheyenne's Wedding",
+                    "Tornado"
+                ]
+            },{
+                title: "Season 3",
+                sections: [
+                    "Grand Re-Opening",
+                    "Brett's Dead",
+                    "Part-Time Hires",
+                    "Workplace Bullying",
+                    "Sal's Dead",
+                    "Health Fund",
+                    "Christmas Eve",
+                    "Viral Video",
+                    "Golden Globes Party",
+                    "High Volume Store",
+                    "Angels and Mermaids",
+                    "Groundhog Day",
+                    "Video Game Release",
+                    "Safety Training",
+                    "Amnesty",
+                    "Target",
+                    "District Manager",
+                    "Local Vendors Day",
+                    "Lottery",
+                    "Gender Reveal",
+                    "Aftermath",
+                    "Town Hall"
+                ]
+            },{
+                title: "Season 4",
+                sections: [
+                    "Back to School",
+                    "Baby Shower",
+                    "Toxic Workplace",
+                    "Costume Competition",
+                    "Delivery Day",
+                    "Maternity Leave",
+                    "New Initiative",
+                    "Managers' Conference",
+                    "Shadowing Glenn",
+                    "Cloud 9 Academy",
+                    "Steps Challenge",
+                    "Blizzard",
+                    "Love Birds",
+                    "Minor Crimes",
+                    "Salary",
+                    "Easter",
+                    "Quinceañera",
+                    "Cloud Green",
+                    "Scanners",
+                    "#Cloud9Fail",
+                    "Sandra's Fight",
+                    "Employee Appreciation Day"
+                ]
+            },{
+                title: "Season 5",
+                sections: [
+                    "Cloud 9.0",
+                    "Testimonials",
+                    "Forced Hire",
+                    "Mall Closing",
+                    "Self-Care",
+                    "Trick-or-Treat",
+                    "Shoplifter Rehab",
+                    "Toy Drive",
+                    "Curbside Pickup",
+                    "Negotiations",
+                    "Lady Boss",
+                    "Myrtle",
+                    "Favoritism",
+                    "Sandra's Wedding",
+                    "Cereal Bar",
+                    "Employee App",
+                    "Zephra Cares",
+                    "Playdate",
+                    "Carol's Back",
+                    "Customer Safari",
+                    "California (Part 1)"
+                ]
+            },{
+                title: "Season 6",
+                sections: [
+                    "Essential",
+                    "California (Part 2)",
+                    "Floor Supervisor",
+                    "Prize Wheel",
+                    "Hair Care Products",
+                    "Biscuit",
+                    "The Trough",
+                    "Ground Rules",
+                    "Conspiracy",
+                    "Depositions",
+                    "Deep Cleaning",
+                    "Customer Satisfaction",
+                    "Lowell Anderson",
+                    "Perfect Store",
+                    "All Sales Final",
+                ]
+            }
+        ]
     }
 }
